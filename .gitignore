@@ -34,4 +34,6 @@ terraform.rc
 
 # Ignore the file named "task"
 tasks.*
+.txt
+
 
