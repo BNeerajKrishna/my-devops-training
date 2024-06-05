@@ -33,5 +33,5 @@ override.tf.json
 terraform.rc
 
 # Ignore the file named "task"
-tasks
+tasks.*
 
