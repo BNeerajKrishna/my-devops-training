@@ -1,0 +1,6 @@
+created two instances in different regions and a s3 bucket by using the following variables
+zone_names - for declaring AWS regions where you want to deploy the instances
+using the list(string)
+vm_type - Type of EC2 instance to launch.
+bucket_name - Name of the S3 bucket to create.
+key_name - Name of your EC2

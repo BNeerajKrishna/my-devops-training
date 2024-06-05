@@ -1,0 +1,23 @@
+task 1:
+two instances with different regions
+s3 bucket
+
+task 2:
+two data instances
+one with t2 micro
+one with t3 micro
+name should end with -db
+
+task 3:
+two test instances
+with same zone and type
+name should end with 
+    -1 for 1st and 
+    -2 for 2nd
+hint: using count
+
+task 4:
+create repository my-devops-training
+use git clone to clone the repo in devops folder
+create any branch
+copy terraform-session folder to my-devops-training with name my-terraform-session

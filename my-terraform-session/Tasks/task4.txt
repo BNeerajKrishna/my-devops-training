@@ -1,0 +1,7 @@
+create a repository my-devops-training
+use git clone URL to clone the repo in devops folder
+create a branch using git checkout -b name(dev)
+move or add files to the cloned repo
+use git add .
+use git commit -m "message"
+use git push origin branch name
