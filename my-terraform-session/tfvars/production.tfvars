@@ -1,5 +1,6 @@
 name             = "tf-session"
-env              = "prod"
-vm_type          = "t3.micro"
+env              = "production"
+vm_types          = ["t2.micro","t3.micro"]
 public_ip_enable = false
-zone_name        = "ap-south-1b"
+zone_names       = [  "ap-south-1a" , "ap-south-1c"]
+instance_count   = 2
