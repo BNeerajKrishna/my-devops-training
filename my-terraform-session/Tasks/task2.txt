@@ -1,6 +1,0 @@
-created two data instances of different EC2 types in same region with the name ending with -db by using the following variables
-for_each - this allows you to create multiple instances.
-each.value - it is used within the for_each argument to set the instance_type of each EC2 instance being created. 
-toset - this function is used for converting a list or collection type into a set.
-public_ip_enable - It Indicates whether the instance should have a public IP address or not.
-default = "-db": Provides a default value for the variable name2

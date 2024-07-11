@@ -1,4 +1,0 @@
-created two test instances of same EC2 types in same region with the name ending with -1 for first instance and -2 for second instance
-count - This attribute is used for creating multiple instances at a time.
-var.instance_count - Used for declaring the number of instances to be created.
- ${var.name}${var.name3[count.index]} - here the [count.index] is used for specifing a different name for each instance

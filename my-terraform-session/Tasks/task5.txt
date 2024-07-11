@@ -1,2 +1,0 @@
-creating a s3 bucket only when certain condition is satisfied
-Example: count = var.env == "production" ? 1 : 0

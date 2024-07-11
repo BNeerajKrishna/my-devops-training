@@ -1,26 +1,26 @@
 variable "name" {
-  type        = string
+  type = string
   # default     = "tf-session"
   description = "To define the name of ec2"
 }
 
 variable "vm_types" {
-  type    = list(string)
+  type = list(string)
   # default = ["t2.micro", "t3.micro"]
 }
 
 variable "env" {
-  type    = string
+  type = string
   # default = "testing"
 }
 
 variable "public_ip_enable" {
-  type    = bool
+  type = bool
   # default = true
 }
 
 variable "zone_names" {
-  type    = list(string)
+  type = list(string)
   # default = ["ap-south-1a", "ap-south-1c"]
 }
 
@@ -30,6 +30,6 @@ variable "bucket_name" {
 }
 
 variable "instance_count" {
-  type    = number
+  type = number
   # default = 2
 }

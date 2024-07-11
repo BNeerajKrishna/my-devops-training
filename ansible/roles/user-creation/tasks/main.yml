@@ -1,0 +1,29 @@
+---
+- name: Create user and password
+  ansible.builtin.user:
+    name: "{{ my_user_name }}"
+    state: present
+    shell: /bin/bash
+    password: "{{ my_user_password | password_hash('sha512') }}"
+
+- name: comment additional config
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^Include /etc/ssh/sshd_config.d'
+    line: '#Include /etc/ssh/sshd_config.d/*.conf'
+    state: present
+  become: true
+
+- name: Ensure Password Authentication is enabled in sshd_config
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: '^PasswordAuthentication'
+    line: 'PasswordAuthentication yes'
+    state: present
+  become: true
+
+- name: Restart SSH service to apply changes
+  ansible.builtin.service:
+    name: sshd
+    state: restarted
+  become: true

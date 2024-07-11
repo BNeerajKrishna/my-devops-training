@@ -1,0 +1,34 @@
+---
+- name: Update apt package cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install required packages
+  ansible.builtin.apt:
+    name:
+      - git
+      - python3-pip
+      - wget
+      - zip
+      - golang-go
+      - jq
+    state: present
+
+- name: Get Git version
+  ansible.builtin.command:
+    cmd: git --version
+  register: git_version
+  changed_when: false
+
+- name: Get Go version
+  ansible.builtin.command:
+    cmd: go version
+  register: go_version
+  changed_when: false
+
+- name: Display package versions
+  ansible.builtin.debug:
+    msg: "{{ item }}"
+  loop:
+    - "Git version: {{ git_version.stdout }}"
+    - "Go version: {{ go_version.stdout }}"
