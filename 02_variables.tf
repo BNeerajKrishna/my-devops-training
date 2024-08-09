@@ -33,3 +33,15 @@ variable "instance_count" {
   type = number
   # default = 2
 }
+
+variable "subnet_configs" {
+  description = "Map of subnet configurations"
+  type = map(object({
+    cidr_block  = string
+    subnet_type = string
+    zone        = string
+  }))
+  default = {}
+}
+
+
