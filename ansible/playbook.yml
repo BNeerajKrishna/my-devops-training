@@ -1,0 +1,18 @@
+---
+- hosts: nginx_host
+  become: true
+  gather_facts: true
+  roles:
+    - nginx
+    - basic-packages
+    - user-creation
+    - file_management
+
+- hosts: apache_host
+  become: true
+  gather_facts: true
+  roles:
+    - apache
+    - basic-packages
+    - user-creation
+    - file_management

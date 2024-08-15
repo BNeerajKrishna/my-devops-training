@@ -1,0 +1,32 @@
+---
+- name: Install Nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+- name: Configure Nginx to use custom port
+  template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+
+- name: Create link to enable Nginx config
+  ansible.builtin.file:
+    dest: /etc/nginx/sites-enabled/default
+    src: /etc/nginx/sites-available/default
+    state: link
+  notify: restart nginx
+
+- name: Create directory for static content
+  file:
+    path: "{{ nginx_custom_directory }}"
+    state: directory
+    mode: 0755
+
+- name: Create "index.html" file with "hello world" content
+  template:
+    src: "index.html.j2"
+    dest: "{{ nginx_custom_directory }}/index.html"
+    mode: 0644
+  notify:
+    - restart nginx
+
